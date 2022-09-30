@@ -10,7 +10,6 @@ import TextField from '@mui/material/TextField';
 
 
 function App() {
-  
   const [userData] = useState({
     labels: UserData.map((data) => data.year),
     datasets: [{
@@ -28,6 +27,7 @@ function App() {
         <Route path="/table">
           <h1>Table Libary</h1>
           <Table data={emailData}>
+
             <Column width={100} sortable fixed resizable>
               <HeaderCell>First Name</HeaderCell>
               <Cell dataKey="first_name" />
@@ -39,7 +39,18 @@ function App() {
               <Cell dataKey="last_name" />
             </Column>
 
+            <Column width={100} sortable fixed resizable>
+              <HeaderCell>Email</HeaderCell>
+              <Cell dataKey="email" />
+            </Column>
+
+            <Column width={100} sortable fixed resizable>
+              <HeaderCell>IP address</HeaderCell>
+              <Cell dataKey="ip_address" />
+            </Column>
+
           </Table>
+
           <TextField id="outlined-basic" label="Outlined" variant="outlined" />
         </Route>
         <Route path="/charts">
